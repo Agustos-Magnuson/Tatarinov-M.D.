@@ -1,0 +1,21 @@
+int[] mn = { 24, 34, 123, 23, 1, 4, 456, 45, 345, 2, 67, 647 };
+int[] mns = mn;
+for (int i = 0; i < mn.Length; i++)
+{
+    Console.Write($" {mn[i]}");
+}
+Console.WriteLine();
+Random rand = new Random();
+int k = 0;
+for (int i = 0; i < 12; i++)
+{
+    while (k == i) k = rand.Next(11);
+    int m = mn[i];
+    mn[i] = mn[k];
+    mn[k] = m;
+}
+
+for (int i = 0; i < 12; i++)
+{
+    Console.Write($" {mn[i]}");
+}
